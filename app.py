@@ -1,10 +1,10 @@
-    from flask import Flask
+ from flask import Flask                         # импорт класса Flask.
 
-    app = Flask(__name__)
+app = Flask(__name__)                            # создание экземпляра приложения Flask.
 
-    @app.route('/', methods=['GET'])
-    def hello_world():
-        return "Hello, World!"
+@app.route('/', methods=['GET'])                 #декоратор, который определяет маршрут / и метод GET.
+def hello_world():                               # функция, которая будет обрабатывать запрос по маршруту /.
+    return "Hello, World!"                       # возвращает строку "Hello, World!".
 
-    if __name__ == '__main__':
-        app.run(debug=True)
+if __name__ == '__main__':                       # проверка, что скрипт выполняется напрямую (не импортируется как модуль).
+    app.run(debug=True)                          # запускает сервер Flask в режиме отладки (автоматически перезапускается при изменении кода).
